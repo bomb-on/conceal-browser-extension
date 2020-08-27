@@ -1,0 +1,143 @@
+body,
+#root,
+.login,
+.wallet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+body, #root {
+  width: 350px;
+  height: 600px;
+  padding: 0;
+  margin: 0;
+}
+
+.login {
+  height: 100%;
+  justify-content: space-between;
+}
+
+.login .logo {
+  margin-top: 2rem;
+}
+
+.login .logo svg {
+  padding: 0.2rem;
+}
+
+.login form {
+  margin-bottom: 2rem;
+}
+
+.login input {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.element-header {
+  width: 100%;
+}
+
+.wallet {
+  width: 100%;
+  max-height: 100%;
+}
+
+.wallet h4 {
+  margin: 0.2rem 0;
+}
+
+.wallet-header {
+  width: 100%;
+}
+
+.wallet-header .wallet-current {
+  padding: 0.6rem 0;
+}
+
+.wallets-list,
+.wallets-list ul,
+.wallets-list ul li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wallets-list ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.wallets-list ul li span {
+  padding: 0.3rem 0.5rem;
+}
+
+.wallet-details {
+  width: 100%;
+  padding: 0.9rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-details h3 {
+  margin: 0;
+}
+
+.wallet-history {
+  width: 100%;
+  overflow: auto;
+}
+
+.wallet-history .tx {
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.wallet-history .tx-icon {
+  padding: 0.4rem;
+  font-size: 2rem;
+}
+
+.wallet-history .tx-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wallet-history .tx-details p {
+  margin: 0;
+}
+
+.wallet-history .tx-details .tx-incoming,
+.wallet-history .tx-details .tx-outgoing {
+  margin-top: 0.3rem;
+}
+
+.wallet-history .tx-details .tx-date {
+  margin-top: 0.4rem;
+}
+
+.wallet-history .tx-details .tx-hash {
+  margin-bottom: 0.4rem;
+}
+
+.form-layout .form-label {
+  padding: 0.1rem;
+}
+
+.form-layout,
+.form-layout div input {
+  width: 100%;
+}
+
+.qr-code {
+  padding: 1rem;
+}

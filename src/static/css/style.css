@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+body {
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  background-color: rgb(40, 45, 49);
+  color: rgb(238, 238, 238);
+}
+
+a {
+  color: rgb(255, 165, 0);
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+a:hover {
+  color: rgb(17, 93, 164);
+  text-decoration: none;
+}
+
+.logo svg {
+  width: 128px;
+  height: 128px;
+  border: 1px solid rgb(35, 38, 40);
+}
+
+.login input {
+  border: none;
+  background: none;
+  border-bottom: 1px solid rgb(172, 153, 153);
+  font-size: 1.1rem;
+  color: rgb(238, 238, 238);
+}
+
+.login .login-error {
+  color: rgb(220, 53, 69);
+}
+
+.receive,
+.send {
+  width: 100%;
+}
+
+.element-header {
+  border-bottom: 1px solid rgb(82, 76, 76);
+}
+
+.wallet h4 {
+  font-variant-caps: all-small-caps;
+  font-weight: 300;
+}
+
+.wallet-header {
+  font-weight: 300;
+  font-size: 0.8rem;
+  background-color: rgb(21, 21, 21);
+}
+
+.wallet-header .wallet-address {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.wallet-header button,
+.wallet-header .wallet-address button {
+  background: none;
+  border: none;
+  padding: 0.2rem;
+  color: rgb(255, 165, 0);
+  cursor: pointer;
+}
+
+.wallet-header button {
+  font-size: 1rem;
+}
+
+.wallet-header button:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(158, 104, 5);
+}
+
+.wallet-header .wallet-address button {
+
+}
+
+.wallet-header .wallet-address button:hover {
+  background: none;
+  color: rgb(158, 104, 5);
+}
+
+.wallets-list {
+  position: absolute;
+  background-color: rgb(21, 21, 21);
+  box-shadow: 0 5px 15px rgba(21, 23, 22, 0.92);
+}
+
+.wallets-list ul {
+  list-style: none;
+  border-top: 1px solid rgb(111, 109, 109);
+}
+
+.wallets-list ul li {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 300;
+  border-bottom: 1px solid rgb(111, 109, 109);
+}
+
+.wallets-list ul li:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.wallets-list ul li .wallet-address {
+  font-size: 1rem;
+}
+
+.wallets-list ul li:hover .wallet-address {
+  cursor: pointer;
+  color: rgb(255, 165, 0);
+}
+
+.wallet-details {
+  border-bottom: 1px solid rgb(172, 153, 153);
+}
+
+.wallet-details a {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.wallet-details .amount-locked {
+  color: rgb(248, 121, 103);
+}
+
+.wallet-details .amount-total {
+  font-size: 1.5rem;
+}
+
+.wallet-details .amount-locked,
+.wallet-details .amount-usd {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.wallet-history .tx {
+  font-size: 1.2rem;
+  border-top: 1px solid rgb(82, 76, 76);
+}
+
+.wallet-history .tx-details {
+  font-size: 1.2rem;
+}
+
+.wallet-history .tx-details small {
+  font-size: 0.7rem;
+}
+
+.wallet-history .tx-details a {
+  font-size: 0.8rem;
+}
+
+.tx-incoming {
+  color: rgb(161, 234, 149);
+}
+
+.tx-incoming-bg {
+  background-color: rgb(40, 49, 41);
+}
+
+.tx-outgoing {
+  color: rgb(234, 89, 104);
+}
+
+.tx-outgoing-bg {
+  background-color: rgb(49, 40, 40);
+}
+
+.tx-date,
+.tx-fee {
+  font-size: 0.7rem;
+}
+
+.receive .form-layout {
+  text-align: left;
+}
+
+.qr-code > * {
+  border: 10px solid rgb(255, 255, 255);
+}
+
+
+
+
+.hidden {
+  display: none;
+}
+
+
+
+
+.text-success {
+  color: #23BF08 !important;
+}
+
+a.text-success:hover, a.text-success:focus {
+  color: #1a8e06 !important;
+}
+
+.text-info {
+  color: #5B93D3 !important;
+}
+
+a.text-info:hover, a.text-info:focus {
+  color: #3579c6 !important;
+}
+
+.text-warning {
+  color: #F49917 !important;
+}
+
+a.text-warning:hover, a.text-warning:focus {
+  color: #ce7d0a !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+a.text-danger:hover, a.text-danger:focus {
+  color: #bd2130 !important;
+}

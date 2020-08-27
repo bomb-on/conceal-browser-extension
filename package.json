@@ -1,0 +1,48 @@
+{
+  "name": "conceal-browser-extension",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "jwt-decode": "^2.2.0",
+    "multicoin-address-validator": "git+https://github.com/bomb-on/multicoin-address-validator.git",
+    "qrcode.react": "^1.0.0",
+    "react": "^16.13.1",
+    "react-bootstrap-typeahead": "^5.1.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "react-moment": "^0.9.7",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "INLINE_RUNTIME_CHUNK=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "react-app-rewired": "^2.1.6",
+    "webpack-cli": "^3.3.12",
+    "write-file-webpack-plugin": "^4.5.1"
+  }
+}
