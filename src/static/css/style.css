@@ -13,31 +13,98 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 a:hover {
-  color: rgb(17, 93, 164);
+	color: #cc8400;
+	transition: .3s;
   text-decoration: none;
 }
 
-.logo svg {
-  width: 128px;
-  height: 128px;
-  border: 1px solid rgb(35, 38, 40);
+h1, h2, h3, h4, h5 {
+	user-select: none;
 }
 
 .login input {
   border: none;
   background: none;
   border-bottom: 1px solid rgb(172, 153, 153);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgb(238, 238, 238);
 }
 
+input {
+	min-width: 100%;
+	max-width: 100%;
+	padding:0px;
+	margin: 0px;
+	text-indent: 4px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.logo {
+	margin-bottom: 1rem;
+}
+
 .login .login-error {
-  color: rgb(220, 53, 69);
+	margin-top: 1rem;
+	font-size: 0.8rem;
+  color: rgb(235, 55, 66);
+	background:rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(235, 55, 66, 0.4);
+	padding: 0.5rem;
+	border-radius: 4px;
+}
+
+.welcome {
+	color: #fff;
+	font-size: 1.5rem;
+}
+.welcome h3 {
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+}
+.welcome span {
+	color: #ccc;
+	font-size: 1.1rem;
+}
+
+.menu {
+	position: absolute;
+	left: 1rem;
+	font-size: 1.5rem;
+	color: orange;
+}
+
+.menu:hover {
+	color: #cc8400;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.hide {
+	position: absolute;
+	left: 50px;
+	top: 15px;
+	text-transform: uppercase;
+	border: none;
+	font-size: 19px;
+	margin-left: 5px;
+	color: orange;
+	background: rgba(0, 0, 0, 0)
+}
+
+.hide:hover {
+	color: #cc8400;
+	cursor: pointer;
+	transition: .3s;
 }
 
 .receive,
 .send {
-  width: 100%;
+	width: 100%;
+  overflow: auto;
 }
 
 .element-header {
@@ -45,46 +112,59 @@ a:hover {
 }
 
 .wallet h4 {
-  font-variant-caps: all-small-caps;
-  font-weight: 300;
+	margin: 1rem;
+  font-size: 1.25rem;
+	font-weight: unset;
 }
 
 .wallet-header {
+	min-height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
   font-weight: 300;
   font-size: 0.8rem;
-  background-color: rgb(21, 21, 21);
+  background-color: #1d2124;
+	border-bottom: 1px solid #444;
 }
 
-.wallet-header .wallet-address {
+.link-icon {
+	color: orange;
+	font-size: 0.8rem;
+}
+
+.wallet-header .address, .title {
   font-weight: 400;
-  font-size: 1.1rem;
-}
-
-.wallet-header button,
-.wallet-header .wallet-address button {
-  background: none;
-  border: none;
-  padding: 0.2rem;
-  color: rgb(255, 165, 0);
-  cursor: pointer;
-}
-
-.wallet-header button {
   font-size: 1rem;
+	padding: 2.5px;
 }
 
-.wallet-header button:hover {
-  background-color: rgb(0, 0, 0);
-  color: rgb(158, 104, 5);
+.wallet-header .address {
+	text-transform: uppercase;
+	color: #999;
+	user-select: none;
 }
 
-.wallet-header .wallet-address button {
-
+.status {
+	position:absolute;
+	right: 1rem;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	justify-content: center;
+	flex-shrink: 0;
+	opacity: 1;
+	transform: scale(1);
+	animation: pulse 2s infinite;
 }
 
-.wallet-header .wallet-address button:hover {
-  background: none;
-  color: rgb(158, 104, 5);
+.red {
+	background-color: rgb(235, 55, 66);
+}
+
+.green {
+	background-color: rgb(42 183 19);
 }
 
 .wallets-list {
@@ -118,40 +198,62 @@ a:hover {
   color: rgb(255, 165, 0);
 }
 
-.wallet-details {
-  border-bottom: 1px solid rgb(172, 153, 153);
-}
-
 .wallet-details a {
   font-size: 2.5rem;
   font-weight: 300;
 }
 
 .wallet-details .amount-locked {
-  color: rgb(248, 121, 103);
+  color: rgb(235, 55, 66);
 }
 
 .wallet-details .amount-total {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+	margin-top: 0.5rem;
+}
+
+.select-wallet .title {
+	margin-top: 3rem;
+	font-size: 1.6rem;
+}
+
+.wallet-list {
+	align-items: center;
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.wallet-list button {
+	margin-bottom: 15px;
+	width: 100%;
+	height: 45px;
+	font-size: large;
+	text-transform: uppercase;
+	background: orange;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
 }
 
 .wallet-details .amount-locked,
-.wallet-details .amount-usd {
-  font-size: 0.75rem;
-  font-weight: 300;
+.wallet-details .fiat {
+  font-size: 2.4rem;
+  font-weight: 600;
+	user-select: none;
 }
 
 .wallet-history .tx {
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-top: 1px solid rgb(82, 76, 76);
 }
 
 .wallet-history .tx-details {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .wallet-history .tx-details small {
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 .wallet-history .tx-details a {
@@ -159,27 +261,30 @@ a:hover {
 }
 
 .tx-incoming {
-  color: rgb(161, 234, 149);
-}
-
-.tx-incoming-bg {
-  background-color: rgb(40, 49, 41);
+  color: rgb(42 183 19);
 }
 
 .tx-outgoing {
-  color: rgb(234, 89, 104);
+  color: rgb(180, 180, 180);
 }
 
-.tx-outgoing-bg {
-  background-color: rgb(49, 40, 40);
+p.tx-outgoing {
+  font-size: 1.3rem;
+}
+
+p.tx-incoming {
+  font-size: 1.3rem;
 }
 
 .tx-date,
 .tx-fee {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+	text-transform: capitalize;
+	font-style: italic;
+	color: #fff;
 }
 
-.receive .form-layout {
+.receive, .send .form-layout {
   text-align: left;
 }
 
@@ -187,15 +292,21 @@ a:hover {
   border: 10px solid rgb(255, 255, 255);
 }
 
-
-
-
-.hidden {
-  display: none;
+.btn-signin {
+	margin-top: 15px;
+	width: 100%;
+	height: 45px;
+	font-size: large;
+	text-transform: uppercase;
+	background: orange;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
 }
 
-
-
+.btn-signin:disabled {
+	background: #b9b9b9;
+}
 
 .text-success {
   color: #23BF08 !important;
@@ -227,4 +338,21 @@ a.text-warning:hover, a.text-warning:focus {
 
 a.text-danger:hover, a.text-danger:focus {
   color: #bd2130 !important;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(185, 185, 185, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(185, 185, 185, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(185, 185, 185, 0);
+	}
 }

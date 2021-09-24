@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { AppContext } from '../ContextProvider';
 import { useFormInput, useFormValidation } from '../../helpers/hooks';
-import { ReactComponent as Logo } from '../../static/img/logo.svg';
+import logo from '../../static/img/icon_x128.png';
 
 
 const Login = props => {
@@ -33,21 +33,26 @@ const Login = props => {
   return (
     <div className="login">
       <div className="logo">
-        <Logo />
+				<img src={logo} alt="Logo" />
       </div>
 
-      {message.loginForm &&
-        <div className="login-error">
-          {message.loginForm}
-        </div>
-      }
+			<div className="welcome">
+				<h3>Conceal Wallet</h3>
+				<span>Powered by Conceal Cloud</span>
+			</div>
+
+			{message.loginForm &&
+				<div className="login-error">
+					{message.loginForm}
+				</div>
+			}
 
       <div>
         <form onSubmit={e => loginUser({ e, email, password, twoFACode, id: 'loginForm' })}>
           <div>
             <input
               {...bindEmail}
-              placeholder="Enter your email"
+              placeholder="Email"
               type="email"
               name="email"
               minLength={3}
@@ -57,7 +62,7 @@ const Login = props => {
           <div>
             <input
               {...bindPassword}
-              placeholder="Enter your password"
+              placeholder="Password"
               type="password"
               name="password"
               minLength={8}
@@ -67,7 +72,7 @@ const Login = props => {
           <div>
             <input
               {...bindTwoFACode}
-              placeholder="2-Factor Authentication (if enabled)"
+              placeholder="2FA (if enabled)"
               type="number"
               name="twoFA"
               max={999999}
@@ -79,13 +84,15 @@ const Login = props => {
             disabled={formSubmitted || !formValid}
             className="btn btn-primary btn-block btn-signin"
           >
-            {formSubmitted ? 'Signing In...' : 'Sign In'}
+            {formSubmitted ? 'Signing In...' : 'Unlock'}
           </button>
         </form>
 
-        <small>
-          Copyright 2019 &copy; All Rights Reserved. Conceal Network<br /><Link to="/terms">Terms &amp; Conditions</Link>
-        </small>
+        <div className="links">
+					<Link to="https://conceal.cloud/signup">Register for an account</Link>
+        	<Link to="https://conceal.cloud/reset_password">Reset your password</Link>
+				</div>
+
       </div>
     </div>
   )

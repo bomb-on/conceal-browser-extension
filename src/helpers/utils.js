@@ -5,7 +5,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../components/ContextProvider';
 
 
-export const maskAddress = (address, maskingChar='.', maskedChars=8, charsPre=7, charsPost=7) => {
+export const maskAddress = (address, maskingChar='.', maskedChars=3, charsPre=5, charsPost=5) => {
   const pre = address.substring(0, charsPre);
   const post = address.substring(address.length - charsPost);
   return `${pre}${maskingChar.repeat(maskedChars)}${post}`;

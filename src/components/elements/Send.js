@@ -55,12 +55,9 @@ const Send = props => {
 
   return (
     <div className="send">
-      <div className="element-header">
-        <h4>Send</h4>
-      </div>
 
       <form
-        className="send-form"
+        className="form"
         onSubmit={e =>
           sendTx(
             {
@@ -88,44 +85,34 @@ const Send = props => {
         }
       >
 
-        <div  className="form-layout">
+        <div className="form-layout">
           <div>
             <div className="form-label">
-              From address
-            </div>
-            <div>
-              {wallet}
-            </div>
-          </div>
-          <div>
-            <div className="form-label">
-              To address
+              Address
             </div>
             <div>
               <Typeahead
                 {...bindAddress}
                 id="address"
                 labelKey="address"
+								className="form-control"
                 filterBy={['address', 'label', 'paymentID']}
                 options={user.addressBook}
                 placeholder="Address"
                 emptyLabel="No records in Address Book"
                 highlightOnlyResult
-                selectHintOnEnter
+                shouldSelect
                 minLength={1}
                 renderMenuItemChildren={option =>
-                  <>
-                    <strong className="addrDropdownLabel" key="name">
-                      {option.label}
-                    </strong>
-                    <div className="addrDropdownLabel" key="address">
-                      <small>
-                        Address: <span className="addrDropdownAddress">{maskAddress(option.address)}</span>
-                        {option.paymentID &&
-                        <span> ( Payment ID: <span className="addrDropdownAddress">{maskAddress(option.paymentID)}</span> )</span>
-                        }
-                      </small>
-                    </div>
+                  <><div className="contacts">
+										  <div className="addrDropdownName" key="name">{option.label}</div>
+											<div className="addrDropdownLabel" key="address">
+													<span className="addrDropdownAddress">{maskAddress(option.address)}</span>
+													{option.paymentID &&
+													<span> (<span className="addrDropdownPaymentId">{maskAddress(option.paymentID)}</span>)</span>
+													}
+											</div>
+										</div>
                   </>
                 }
               />
@@ -133,8 +120,8 @@ const Send = props => {
           </div>
 
           <div>
-            <div>
-              Amount to send
+						<div className="form-label">
+              Amount
             </div>
             <div>
               <input
@@ -152,7 +139,7 @@ const Send = props => {
           </div>
 
           <div>
-            <div>
+						<div className="form-label">
               Payment ID (optional)
             </div>
             <div>
@@ -170,7 +157,7 @@ const Send = props => {
           </div>
 
           <div>
-            <div>
+						<div className="form-label">
               Message (optional)
             </div>
             <div>
@@ -187,7 +174,7 @@ const Send = props => {
           </div>
 
           <div>
-            <div>
+						<div className="form-label">
               Label (optional)
             </div>
             <div>
@@ -205,7 +192,7 @@ const Send = props => {
 
           {userSettings.twoFAEnabled
             ? <div>
-                <div>
+                <div className="form-label">
                   2FA Code
                 </div>
                 <div>
@@ -222,7 +209,7 @@ const Send = props => {
                 </div>
               </div>
             : <div>
-                <div>
+                <div className="form-label">
                   Password
                 </div>
                 <div>
@@ -241,11 +228,8 @@ const Send = props => {
           }
 
           <div>
-            <button
-              type="submit"
-              disabled={formSubmitted || !formValid}
-            >
-              {formSubmitted ? 'SENDING' : 'SEND'}
+            <button className="send-button" type="submit" disabled={formSubmitted || !formValid} >
+              {formSubmitted ? 'Sending' : 'Send'}
             </button>
           </div>
         </div>

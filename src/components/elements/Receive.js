@@ -31,97 +31,99 @@ const Receive = props => {
 
   return (
     <div className="receive">
-      <div className="element-header">
-        <h4>Receive</h4>
-      </div>
 
-      <div  className={`form-layout ${qrCodeLarge ? 'hidden' : ''}`}>
-        <div>
-          <div className="form-label">
-            Current wallet address
-          </div>
-          <div>
-            <input
-              value={currentWallet}
-              readOnly
-              className="form-control"
-            />
-          </div>
-        </div>
+      <div className={`form ${qrCodeLarge ? 'hidden' : ''}`}>
 
-        <div>
-          <div>
-            Amount to receive
-          </div>
-          <div>
-            <input
-              {...bindAmount}
-              size={2}
-              placeholder="Amount"
-              className="form-control"
-              name="amount"
-              type="number"
-              min={0}
-              step={Math.pow(10, -(appSettings.coinDecimals - 1))}
-            />
-          </div>
-        </div>
+				<div className="form-layout">
 
-        <div>
-          <div>
-            Payment ID (optional)
-          </div>
-          <div>
-            <input
-              {...bindPaymentID}
-              size={6}
-              placeholder="Payment ID"
-              className="form-control"
-              name="paymentID"
-              type="text"
-              minLength={64}
-              maxLength={64}
-            />
-          </div>
-        </div>
+					<div>
+						<div className="form-label">
+							Address
+						</div>
+						<div>
+							<input
+								value={currentWallet}
+								readOnly
+								className="form-control"
+							/>
+						</div>
+					</div>
 
-        <div>
-          <div>
-            Message (optional)
-          </div>
-          <div>
-            <input
-              {...bindMessage}
-              size={6}
-              placeholder="Message"
-              className="form-control"
-              name="message"
-              type="text"
-            />
-          </div>
-        </div>
+					<div>
+						<div className="form-label">
+							Amount
+						</div>
+						<div>
+							<input
+								{...bindAmount}
+								size={2}
+								placeholder="Amount"
+								className="form-control"
+								name="amount"
+								type="number"
+								min={0}
+								step={Math.pow(10, -(appSettings.coinDecimals - 1))}
+							/>
+						</div>
+					</div>
 
-        <div>
-          <div>
-            Label (optional)
-          </div>
-          <div>
-            <input
-              {...bindLabel}
-              size={6}
-              placeholder="Label"
-              className="form-control"
-              name="label"
-              type="text"
-            />
-          </div>
-        </div>
-      </div>
+					<div>
+						<div className="form-label">
+							Payment ID (optional)
+						</div>
+						<div>
+							<input
+								{...bindPaymentID}
+								size={6}
+								placeholder="Payment ID"
+								className="form-control"
+								name="paymentID"
+								type="text"
+								minLength={64}
+								maxLength={64}
+							/>
+						</div>
+					</div>
+
+					<div>
+						<div className="form-label">
+							Message (optional)
+						</div>
+						<div>
+							<input
+								{...bindMessage}
+								size={6}
+								placeholder="Message"
+								className="form-control"
+								name="message"
+								type="text"
+							/>
+						</div>
+					</div>
+
+					<div>
+						<div className="form-label">
+							Label (optional)
+						</div>
+						<div>
+							<input
+								{...bindLabel}
+								size={6}
+								placeholder="Label"
+								className="form-control"
+								name="label"
+								type="text"
+							/>
+						</div>
+					</div>
+				</div>
+
+			</div>
 
       <div className="qr-code">
         <QRCode
           value={qrCodeString}
-          size={qrCodeLarge ? 256 : 128}
+          size={qrCodeLarge ? 256 : 256}
           onClick={() => setQRCodeLarge(!qrCodeLarge)}
         />
       </div>
