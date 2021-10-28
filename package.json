@@ -1,14 +1,14 @@
 {
   "name": "conceal-browser-extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
-	"homepage": ".",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "jwt-decode": "^3.1.2",
-    "multicoin-address-validator": "git+https://github.com/bomb-on/multicoin-address-validator.git",
+    "multicoin-address-validator": "https://github.com/bomb-on/multicoin-address-validator.git",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
     "react-bootstrap-typeahead": "^5.2.0",
@@ -21,9 +21,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set INLINE_RUNTIME_CHUNK=false&& react-scripts build",
+    "build": "react-scripts build",
+    "build:local": "set INLINE_RUNTIME_CHUNK=false&& react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pack:build": "zip ccx-browser-extension.zip build/",
+    "pack:source": "zip -r ccx-browser-extension-source.zip .env .gitignore .nvmrc README.md package.json public/ src/",
+    "pack:all": "npm run build && npm run pack:build && npm run pack:source"
   },
   "eslintConfig": {
     "extends": "react-app"

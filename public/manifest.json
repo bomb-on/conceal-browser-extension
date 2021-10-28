@@ -4,7 +4,7 @@
   "name": "Conceal Browser Extension",
   "short_name": "Conceal",
   "description": "Conceal Cloud Browser Extension",
-  "version": "0.1",
+  "version": "0.1.1",
 
   "icons": {
     "48": "icons/ccx.svg",
@@ -16,19 +16,6 @@
     "default_popup": "index.html",
     "default_title": "Conceal"
   },
-
-  "permissions": [
-    "storage",
-    "alarms",
-    "tabs",
-    "notifications",
-    "unlimitedStorage",
-    "webNavigation",
-    "activeTab",
-    "declarativeContent",
-    "contextMenus",
-    "*://*/*"
-  ],
 
   "content_security_policy": "script-src 'self'; object-src 'self'"
 }
