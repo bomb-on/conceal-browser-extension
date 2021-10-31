@@ -22,12 +22,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:local": "set INLINE_RUNTIME_CHUNK=false&& react-scripts build",
+    "build:local": "INLINE_RUNTIME_CHUNK=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pack:build": "zip -j -r ccx-browser-extension.zip build/",
-    "pack:source": "zip -j -r ccx-browser-extension-source.zip .env .gitignore .nvmrc README.md package.json public/ src/",
-    "pack:all": "npm run build && npm run pack:build && npm run pack:source"
+    "pack:build": "cd build && zip -r ../ccx-browser-extension.zip . -x '*.DS_Store*'",
+    "pack:source": "zip -r ccx-browser-extension-source.zip . -x '*.DS_Store*' '.git/*' '.idea*' '*.zip' 'build/*' 'node_modules/*' 'package-lock.json'",
+    "pack:all": "rm -rf build/ ccx-browser-extension*.zip; npm run build && npm run pack:build && npm run pack:source"
   },
   "eslintConfig": {
     "extends": "react-app"
