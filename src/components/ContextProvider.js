@@ -334,7 +334,6 @@ const AppContextProvider = props => {
   };
 
   const initApp = () => {
-    console.log('init');
     const currentWallet = localStorage.getItem('ccx:current_wallet');
     if (currentWallet) dispatch({ type: 'UPDATE_CURRENT_WALLET', currentWallet });
     const { appSettings, userSettings } = state;

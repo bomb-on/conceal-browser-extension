@@ -89,8 +89,7 @@ const Login = props => {
         </form>
 
         <div className="links">
-					<Link to="https://conceal.cloud/signup">Register for an account</Link>
-        	<Link to="https://conceal.cloud/reset_password">Reset your password</Link>
+          Visit <a href="https://conceal.cloud/">Conceal Cloud</a> to create a new account or reset the password.
 				</div>
 
       </div>

@@ -10,8 +10,8 @@ import History from '../elements/History';
 
 const Wallet = () => {
   const { actions, state } = useContext(AppContext);
-  const { hideBalance, switchWallet } = actions;
-  const { layout, prices, userSettings, wallets } = state;
+  const { hideBalance, logoutUser, switchWallet } = actions;
+  const { appSettings, layout, prices, userSettings, wallets } = state;
   const { currentWallet } = userSettings;
   const { balanceHidden } = layout;
 
@@ -55,7 +55,7 @@ const Wallet = () => {
 			<div className={`sidepanel ${!walletsOpened ? 'hidden' : 'active'}`}>
 
 				<div className="sidepanel-header">
-					<h1>Conceal Wallet</h1>
+					<h1>Conceal Wallet <small className="app-version">v{appSettings.appVersion}</small></h1>
 					<FiChevronLeft className="close"></FiChevronLeft>
 				</div>
 
@@ -79,7 +79,7 @@ const Wallet = () => {
 					</div>
 				</div>
 
-				<div className="logout">
+				<div className="logout" onClick={() => { logoutUser() }}>
 					<div className="actions">
 						<FiLock className="icon"></FiLock>
 						<span className="text">Sign Out</span>

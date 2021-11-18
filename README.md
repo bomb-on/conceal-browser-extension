@@ -5,7 +5,7 @@
 ### Usage
 
 Requirements:
- - NodeJS (v14 or higher)
+ - NodeJS (v17 or higher)
 
 #### Development
 

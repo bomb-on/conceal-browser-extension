@@ -71,7 +71,7 @@ body, #root {
 
 .links a {
 	width: 100%;
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-bottom: 10px;
 }
 

@@ -146,6 +146,10 @@ input:-webkit-autofill:focus {
 	user-select: none;
 }
 
+.app-version {
+	font-size: 0.7rem;
+}
+
 .status {
 	position:absolute;
 	right: 1rem;
